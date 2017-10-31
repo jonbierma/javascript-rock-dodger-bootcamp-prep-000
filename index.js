@@ -77,7 +77,7 @@ function createRock(x) {
       GAME.removeChild(rock)
       endGame()
     } else if (rock.style.top > 380){
-      GAME.removeChild('rock')
+      rock.remove()
     } else {
       move(rock)
     }
