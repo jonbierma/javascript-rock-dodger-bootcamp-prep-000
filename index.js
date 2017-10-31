@@ -28,7 +28,7 @@ function checkCollision(rock) {
   if (top > 360) {
     const dodgerLeftEdge = positionToInteger(DODGER.style.left)
 
-    
+
     const dodgerRightEdge = dodgerLeftEdge + 40
 
     const rockLeftEdge = positionToInteger(rock.style.left)
@@ -98,9 +98,10 @@ function createRock(x) {
 
   // We should kick of the animation of the rock around here
   function move(el) {
-    var top = 0
-
+    
     function step() {
+      var leftNumbers = el.style.top.replace('px', '')
+      var top = parseInt(leftNumbers, 10)
       el.style.top = `${top += 2}px`
 
       if (top < GAME_HEIGHT) {
