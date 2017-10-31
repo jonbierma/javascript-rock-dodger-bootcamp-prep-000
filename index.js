@@ -28,12 +28,11 @@ function checkCollision(rock) {
   if (top > 360) {
     const dodgerLeftEdge = positionToInteger(DODGER.style.left)
 
-    // FIXME: The DODGER is 40 pixels wide -- how do we get the right edge?
+    
     const dodgerRightEdge = dodgerLeftEdge + 40
 
     const rockLeftEdge = positionToInteger(rock.style.left)
 
-    // FIXME: The rock is 20 pixel's wide -- how do we get the right edge?
     const rockRightEdge = rockLeftEdge + 20;
 
     if (rockLeftEdge <= dodgerLeftEdge && rockRightEdge >= dodgerLeftEdge){
@@ -74,7 +73,7 @@ function createRock(x) {
    */
   function moveRock() {
     if (checkCollision(rock)){
-      GAME.removeChild(rock)
+      rock.remove()
       endGame()
     } else if (rock.style.top > 380){
       rock.remove()
