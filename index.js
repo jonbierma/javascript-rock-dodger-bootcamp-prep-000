@@ -104,7 +104,7 @@ function createRock(x) {
     function step() {
       el.style.top = `${top += 2}px`
 
-      if (top < 200) {
+      if (top < 360) {
         window.requestAnimationFrame(step)
       }
     }
